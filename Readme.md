@@ -6,25 +6,15 @@ OpenAI/ChatGPT 的 API。
 
 ---
 
-**⚠️⚠️⚠️⚠️⚠️⚠️\
-由于 https://closeai.deno.dev
-访问量巨大，已经超过了 Deno Deploy 的额度，本代理暂时关闭，请大家参照教程自行部署。\
-⚠️⚠️⚠️⚠️⚠️⚠️**
-
 ## 自己部署
+Fork this repo
 
 ### Deno
 
-点击[这个链接][1]，可以快速一键部署到 Deno Deploy 上。
+https://dash.deno.com/new
+Deploy like following
+<img width="543" alt="image" src="https://github.com/gaxxx/openai-proxy/assets/471881/61deaeab-b701-4888-9db3-8d7ec20b6eda">
 
-然后在 Settings 选项卡里可以设置自定义二级域名，或者绑定自己的域名。
-
-或者，访问 https://deno.new 域名，把 deno.ts 复制到 Playground 中，点击 Play
-按钮。
-
-### CloudFlare
-
-将 cloudflare.ts 复制到 CloudFlare Workers 中。
 
 ## 使用
 
@@ -35,7 +25,7 @@ import { Configuration } from "openai";
 
 const configuration = new Configuration({
   apiKey: OPENAI_API_KEY,
-+ basePath: "https://xxxxx.deno.dev/v1",
++ basePath: "https://<your deno instance>/v1",
 });
 ```
 
@@ -45,7 +35,7 @@ const configuration = new Configuration({
   import openai
 
   openai.api_key = os.getenv("OPENAI_API_KEY")
-+ openai.api_base = "https://xxxxx.deno.dev/v1"
++ openai.api_base = "<your deno instance>/v1"
 ```
 
 ## 相关仓库
